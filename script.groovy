@@ -1,5 +1,9 @@
 def buildApp() {
     echo 'building the application...'
+    
+    for(x in 1..5){
+    println x 
+
 } 
 
 def testApp() {
