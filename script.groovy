@@ -20,11 +20,7 @@ def testApp() {
 def deployApp() {
     echo 'deplying the application...'
     echo "deploying version ${params.VERSION}"
-        def repeat(val, x=10){
-           for(i in 0..<x){
-             println val
-      }
-}
+       
 } 
 
 return this
