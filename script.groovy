@@ -18,12 +18,14 @@ def testApp() {
 } 
 
 def deployApp() {
-    echo 'deplying the application...'
-    echo "deploying version ${params.VERSION}"
     
     def no = [1,2,3,4]
     def no2 = no +5 //=[1,2,3,4,5]
     def no3 = no - [2,3] //=[1,4]
+    echo 'deplying the application...'
+    echo "deploying version ${params.VERSION}"
+    
+    
     
        
 } 
