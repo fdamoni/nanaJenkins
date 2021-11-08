@@ -18,6 +18,7 @@ pipeline {
             steps {
                 script {
                     gv.buildApp()
+                    gv.changeAlias("http://mymachine:9200", 'main_index', 'backup_index')
                 }
             }
         }
