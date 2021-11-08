@@ -29,5 +29,20 @@ def deployApp() {
     
        
 } 
+def changeAlias(machine, fromIndex, toIndex) {
+    def command = """{
+        \"actions\":[
+          { \"remove\" : { \"index\" : \"${fromIndex}\", \"alias\" : \"main\" } },
+          { \"add\" : { \"index\" : \"${toIndex}\", \"alias\" : \"main\" } }]
+      }"""
+    echo(command)
+    response = httpRequest (consoleLogResponseBody: true,
+      contentType: 'APPLICATION_JSON',
+      httpMode: 'POST',
+      requestBody: command,
+      url: "${machine}/_aliases",
+      validResponseCodes: '200')
+    return response
+}
 
 return this
